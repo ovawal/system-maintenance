@@ -1,4 +1,4 @@
-## Bash sript to update, upgrade and log the system every Sunday at 2:00am
+## Bash script to update, upgrade and log the system every Sunday at 2:00am
 
 ### Script will run on CentOS,Rocky and RHEL systems.
 
