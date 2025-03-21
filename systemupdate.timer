@@ -1,0 +1,10 @@
+[Unit]
+Description=Run system maintenance every Sunday at 2am
+
+[Timer]
+OnCalendar=Sun 02:00:0
+Persistent=True
+Unit=systemupdate.service
+
+[Install]
+WantedBy=timers.target

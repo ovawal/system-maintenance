@@ -1,0 +1,11 @@
+[Unit]
+Description=Run system maintenance
+
+[Service]
+Type=oneshot
+ExecStart=/home/walter/MyScripts/systemupdate.sh
+
+[Install]
+WantedBy=multi-user.target
+
+
