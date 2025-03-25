@@ -1,4 +1,4 @@
-## Bash script to update, upgrade and log the system every Sunday at 02:00 am
+## Bash script to update, upgrade and log the system every Sunday at 02:00 
 
 ### Script will run on CentOS,Rocky and RHEL systems.
 
@@ -6,7 +6,7 @@
 
 1.Download file to local machine
 
-2.Copy systemupdate.sh
+2.Copy script systemupdate.sh to sbin directory
 ```
 sudo cp /path/to/your/download/script/systemupdate.sh /usr/local/sbin/systemupdate.sh
 
@@ -40,10 +40,6 @@ sudo systemctl daemon-reload
 
 ```
 sudo systemctl enable systemupdate.timer
-
-```
-```
-sudo systemctl start systemupdate.service
 
 ```
 #### System update will occur every Sunday at 0200.
