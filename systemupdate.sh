@@ -36,7 +36,7 @@ log "Updating the system..."
 
 dnf update -y > /dev/null 2>&1
 
-if [ $? -ne 0 ]; then
+if [[ $? -ne 0 ]]; then
     log "Error during dnf update... Contact your administrator"
     exit 1
 else
@@ -48,7 +48,7 @@ fi
 log "Upgrading the System..."
 dnf upgrade -y > /dev/null 2>&1
 
-if [ $? -ne 0 ]; then 
+if [[ $? -ne 0 ]]; then 
 	log "Error during dnf update... Contact your administrator"
 	exit 1
 else
@@ -60,7 +60,7 @@ fi
 log "Cleaning dnf cache..."
 dnf clean all -y > /dev/null 2>&1
 
-if [ $? -ne 0 ]; then
+if [[ $? -ne 0 ]]; then
 	log "Error during dnf clean... contact your administrator"
 	exit 1
 else 
@@ -72,7 +72,7 @@ log "Removing old kernels.."
 
 dnf remove $(rpm -q kernel --last | grep -v $(uname -r)) -y > /dev/null 2>&1
 
-if [ $? -ne 0 ]; then
+if [[ $? -ne 0 ]]; then
 	log "Error removing old kernels"
 else
 	log "Old kernels removed..."
@@ -84,7 +84,7 @@ fi
 
 df -h / | awk 'NR==1 || NR==2 {print $2, $3, $4}' | tee -a $LOGFILE
 
-if [ $? -ne 0 ]; then
+if [[ $? -ne 0 ]]; then
 	log "Error checking disk size.."
 	exit 1
 fi
